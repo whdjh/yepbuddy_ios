@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --yb-bg: #FAF7F2;
+    --yb-surface: #FFFFFF;
+    --yb-surface-subtle: #F5EFE6;
+    --yb-surface-muted: #EDE4D6;
+    --yb-fill-pale: #F2EBDD;
+    --yb-fill-strong: #3A2A1A;
+    --yb-fg: #3A2A1A;
+    --yb-fg-secondary: #5A4A36;
+    --yb-fg-tertiary: #6B5638;
+    --yb-fg-disabled: #A8A29E;
+    --yb-accent: #9B7E56;
+    --yb-accent-hover: #876B45;
+    --yb-border: #DDD2BF;
+    --yb-border-subtle: #E8DFD0;
+    --yb-border-strong: #B59768;
+    --yb-on-accent: #FAF7F2;
+    --yb-on-strong: #FAF7F2;
+  }
+
+  .dark {
+    --yb-bg: #1A120A;
+    --yb-surface: #3A2A1A;
+    --yb-surface-subtle: #2A1E12;
+    --yb-surface-muted: #4A3A28;
+    --yb-fill-pale: #5A472D;
+    --yb-fill-strong: #EDE4D6;
+    --yb-fg: #FFFFFF;
+    --yb-fg-secondary: #EDE4D6;
+    --yb-fg-tertiary: #DDD2BF;
+    --yb-fg-disabled: #7B6548;
+    --yb-accent: #D9C99A;
+    --yb-accent-hover: #C4A87E;
+    --yb-border: #5A472D;
+    --yb-border-subtle: #4A3A28;
+    --yb-border-strong: #7B6548;
+    --yb-on-accent: #1A120A;
+    --yb-on-strong: #1A120A;
+  }
+}
