@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text } from "react-native"
 
 type BadgeLevel = "low" | "mid" | "high"
 
@@ -10,9 +10,9 @@ const badgeStyles: Record<BadgeLevel, { container: string; text: string }> = {
 
 interface BadgeProps {
   /** 배지 레벨 */
-  level: BadgeLevel;
+  level: BadgeLevel
   /** 배지 라벨 */
-  label: string;
+  label: string
 }
 
 export function Badge({ level, label}: BadgeProps) {
