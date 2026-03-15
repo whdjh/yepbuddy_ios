@@ -1,0 +1,141 @@
+{
+  "$description": "yepbuddy — Layer 1: Primitive Tokens · 테마 무관 순수 값",
+
+  "color": {
+    "cream": {
+      "50":  "#FAF7F2",
+      "100": "#F5EFE6",
+      "200": "#EDE4D6",
+      "300": "#E8DFD0",
+      "400": "#DDD2BF"
+    },
+    "sand": {
+      "50":  "#F2EBDD",
+      "200": "#D9C99A",
+      "300": "#C4A87E",
+      "400": "#B59768"
+    },
+    "khaki": {
+      "300": "#9B7E56",
+      "400": "#876B45"
+    },
+    "olive": {
+      "200": "#7B6548",
+      "300": "#6B5638",
+      "400": "#5A472D"
+    },
+    "earth": {
+      "200": "#4A3A28",
+      "300": "#3A2A1A",
+      "400": "#2A1E12",
+      "500": "#1A120A"
+    },
+    "neutral": {
+      "400": "#A8A29E"
+    },
+    "white":  "#FFFFFF",
+    "success": { "50": "#D6F0D6", "500": "#4A8C4A", "700": "#2E5A2E" },
+    "info":    { "50": "#D6E8F0", "700": "#1A4A5E" },
+    "error":   { "50": "#FDDDD6", "500": "#C0392B", "600": "#FF6B5A", "700": "#7A2419" }
+  },
+
+  "font": {
+    "family": {
+      "sans": "'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif"
+    },
+    "size": {
+      "xs":   12,
+      "sm":   13,
+      "base": 14,
+      "md":   15,
+      "lg":   16,
+      "xl":   18,
+      "2xl":  20,
+      "3xl":  22,
+      "4xl":  24,
+      "5xl":  26,
+      "6xl":  30,
+      "7xl":  32,
+      "8xl":  40,
+      "9xl":  72,
+      "10xl": 96
+    },
+    "weight": {
+      "regular":  "400",
+      "medium":   "500",
+      "semibold":  "600",
+      "bold":     "700"
+    },
+    "lineHeight": {
+      "none":    1,
+      "tight":   1.2,
+      "snug":    1.3,
+      "normal":  1.5,
+      "relaxed": 1.6
+    },
+    "letterSpacing": {
+      "tight":  -0.03,
+      "normal": 0
+    }
+  },
+
+  "spacing": {
+    "0":   0,
+    "0.5": 2,
+    "1":   4,
+    "1.5": 6,
+    "2":   8,
+    "2.5": 10,
+    "3":   12,
+    "4":   16,
+    "5":   20,
+    "6":   24,
+    "8":   32,
+    "9":   36,
+    "10":  40,
+    "12":  48
+  },
+
+  "radius": {
+    "none": 0,
+    "sm":   8,
+    "md":   10,
+    "icon": 12,
+    "lg":   14,
+    "xl":   16,
+    "drawer": 20,
+    "chip": 22,
+    "full": 9999
+  },
+
+  "size": {
+    "touch":        44,
+    "btn-md":       52,
+    "btn-sm":       44,
+    "chip":         44,
+    "input":        48,
+    "num-input":    56,
+    "icon-btn":     44,
+    "icon-box-sm":  44,
+    "icon-box-md":  48,
+    "icon-box-lg":  56,
+    "drawer-btn":   56,
+    "drawer-btn-lg": 64,
+    "ring-cal":     38,
+    "ring-dash":    90,
+    "ring-tempo":   200,
+    "ring-cd":      240
+  },
+
+  "borderWidth": {
+    "default": 1,
+    "input":   1.5,
+    "icon":    1.5
+  },
+
+  "shadow": {
+    "sm":  { "offset": [0, 1], "blur": 3, "color": "rgba(58,42,26,0.08)" },
+    "md":  { "offset": [0, 4], "blur": 6, "color": "rgba(58,42,26,0.06)" },
+    "lg":  { "offset": [0, 10], "blur": 25, "color": "rgba(58,42,26,0.15)" }
+  }
+}

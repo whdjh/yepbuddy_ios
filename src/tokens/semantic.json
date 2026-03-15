@@ -1,0 +1,106 @@
+{
+  "$description": "yepbuddy — Layer 2: Semantic Tokens · Primitive를 용도별로 매핑 · Light/Dark",
+
+  "light": {
+    "bg":              "{cream.50}",
+    "surface":         "{white}",
+    "surface-subtle":  "{cream.100}",
+    "surface-muted":   "{cream.200}",
+    "fill-pale":       "{sand.50}",
+    "fill-strong":     "{earth.300}",
+
+    "fg":              "{earth.300}",
+    "fg-secondary":    "#5A4A36",
+    "fg-tertiary":     "{olive.300}",
+    "fg-disabled":     "{neutral.400}",
+
+    "accent":          "{khaki.300}",
+    "accent-hover":    "{khaki.400}",
+
+    "border":          "{cream.400}",
+    "border-subtle":   "{cream.300}",
+    "border-strong":   "{sand.400}",
+
+    "on-accent":       "{cream.50}",
+    "on-strong":       "{cream.50}"
+  },
+
+  "dark": {
+    "bg":              "{earth.500}",
+    "surface":         "{earth.300}",
+    "surface-subtle":  "{earth.400}",
+    "surface-muted":   "{earth.200}",
+    "fill-pale":       "{olive.400}",
+    "fill-strong":     "{cream.200}",
+
+    "fg":              "{white}",
+    "fg-secondary":    "{cream.200}",
+    "fg-tertiary":     "{cream.400}",
+    "fg-disabled":     "{olive.200}",
+
+    "accent":          "{sand.200}",
+    "accent-hover":    "{sand.300}",
+
+    "border":          "{olive.400}",
+    "border-subtle":   "{earth.200}",
+    "border-strong":   "{olive.200}",
+
+    "on-accent":       "{earth.500}",
+    "on-strong":       "{earth.500}"
+  },
+
+  "status": {
+    "success-bg":   "{success.50}",
+    "success-text":  "{success.700}",
+    "success":       "{success.500}",
+    "info-bg":       "{info.50}",
+    "info-text":     "{info.700}",
+    "error-bg":      "{error.50}",
+    "error-text":    "{error.700}",
+    "error":         "{error.500}",
+    "error-bright":  "{error.600}"
+  },
+
+  "typography": {
+    "display":    { "size": "{font.size.6xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.snug}",    "tracking": "{font.letterSpacing.tight}" },
+    "heading-lg": { "size": "{font.size.4xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.snug}" },
+    "heading-md": { "size": "{font.size.3xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.snug}" },
+    "heading-sm": { "size": "{font.size.2xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.snug}" },
+    "title":      { "size": "{font.size.xl}",   "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.snug}" },
+    "body-lg":    { "size": "{font.size.lg}",   "weight": "{font.weight.semibold}",  "leading": "{font.lineHeight.normal}" },
+    "body-md":    { "size": "{font.size.md}",   "weight": "{font.weight.regular}",  "leading": "{font.lineHeight.relaxed}" },
+    "body-sm":    { "size": "{font.size.base}",  "weight": "{font.weight.medium}",   "leading": "{font.lineHeight.normal}" },
+    "label":      { "size": "{font.size.sm}",   "weight": "{font.weight.semibold}",  "leading": "{font.lineHeight.tight}" },
+    "caption":    { "size": "{font.size.xs}",   "weight": "{font.weight.medium}",   "leading": "{font.lineHeight.snug}" },
+    "number-xl":  { "size": "{font.size.10xl}", "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.none}" },
+    "number-lg":  { "size": "{font.size.8xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.none}" },
+    "number-md":  { "size": "{font.size.7xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.none}" },
+    "number-sm":  { "size": "{font.size.4xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.none}" },
+    "number-xs":  { "size": "{font.size.3xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.none}" }
+  },
+
+  "layout": {
+    "screen-px":       "{spacing.5}",
+    "card-padding":    "{spacing.6}",
+    "card-inner-pad":  "{spacing.4}",
+    "section-gap":     "{spacing.6}",
+    "grid-gap":        "{spacing.4}",
+    "component-gap":   "{spacing.3}",
+    "chip-gap":        "{spacing.2.5}"
+  },
+
+  "radius-rule": {
+    "$description": "outer = inner × 2",
+    "card-outer":  "{radius.xl}",
+    "card-inner":  "{radius.sm}",
+    "button":      "{radius.lg}",
+    "input":       "{radius.lg}",
+    "icon-btn":    "{radius.icon}",
+    "icon-box":    "{radius.sm}",
+    "segment-outer": "{radius.icon}",
+    "segment-inner": "{radius.md}",
+    "chip":        "{radius.chip}",
+    "drawer":      "{radius.drawer}",
+    "pill":        "{radius.full}"
+  }
+}

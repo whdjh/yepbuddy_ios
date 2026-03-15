@@ -1,0 +1,190 @@
+{
+  "$description": "yepbuddy — Layer 3: Component Tokens · Semantic을 컴포넌트별로 매핑",
+
+  "button": {
+    "primary":  { "bg": "{fill-strong}",  "color": "{on-strong}",  "height": "{size.btn-md}", "radius": "{radius-rule.button}", "font": "{typography.body-lg}" },
+    "accent":   { "bg": "{accent}",       "color": "{on-accent}",  "height": "{size.btn-md}", "radius": "{radius-rule.button}", "font": "{typography.body-lg}" },
+    "outline":  { "bg": "transparent",    "color": "{accent}",     "height": "{size.btn-md}", "radius": "{radius-rule.button}", "borderColor": "{accent}", "borderWidth": "{borderWidth.input}" },
+    "ghost":    { "bg": "transparent",    "color": "{fg-secondary}","height": "{size.btn-sm}", "radius": "{radius-rule.segment-inner}" },
+    "danger":   { "bg": "{status.error}", "color": "{white}",      "height": "{size.btn-md}", "radius": "{radius-rule.button}" },
+    "padding-x": "{spacing.6}"
+  },
+
+  "icon-button": {
+    "back":   { "bg": "{surface-muted}",  "size": "{size.icon-btn}", "radius": "{radius-rule.icon-btn}" },
+    "adjust": { "bg": "{fill-pale}",      "size": "{size.icon-btn}", "radius": "{radius-rule.segment-inner}", "borderColor": "{border}", "borderWidth": "{borderWidth.default}" }
+  },
+
+  "chip": {
+    "default": { "bg": "{fill-pale}",  "color": "{fg}",         "borderColor": "{border}",  "height": "{size.chip}", "radius": "{radius-rule.chip}", "font": "{typography.body-sm}" },
+    "active":  { "bg": "{accent}",     "color": "{on-accent}",  "borderColor": "{accent}",  "height": "{size.chip}", "radius": "{radius-rule.chip}" }
+  },
+
+  "badge": {
+    "low":  { "bg": "{status.success-bg}", "color": "{status.success-text}" },
+    "mid":  { "bg": "{status.info-bg}",    "color": "{status.info-text}" },
+    "high": { "bg": "{status.error-bg}",   "color": "{status.error-text}" },
+    "height": 28,
+    "radius": "{radius-rule.pill}",
+    "padding-x": "{spacing.3}",
+    "font": "{typography.caption}"
+  },
+
+  "card": {
+    "default": { "bg": "{surface}",        "borderColor": "{border}", "borderWidth": "{borderWidth.default}", "radius": "{radius-rule.card-outer}", "padding": "{layout.card-padding}", "shadow": "sm" },
+    "subtle":  { "bg": "{surface-subtle}",  "borderColor": "{border}", "radius": "{radius-rule.card-inner}", "padding": "{layout.card-inner-pad}" }
+  },
+
+  "input": {
+    "default": { "bg": "{surface}",   "color": "{fg}",          "borderColor": "{border}",    "height": "{size.input}", "radius": "{radius-rule.input}", "borderWidth": "{borderWidth.input}", "padding-x": "{spacing.4}", "font": "{typography.body-md}" },
+    "focus":   { "borderColor": "{accent}", "shadow": "0 0 0 3px {accent}26" },
+    "error":   { "borderColor": "{status.error}" },
+    "placeholder": "{fg-disabled}"
+  },
+
+  "search-input": {
+    "$extends": "input.default",
+    "padding-left": "{spacing.12}",
+    "icon-left": "{spacing.3.5}"
+  },
+
+  "textarea": {
+    "$extends": "input.default",
+    "min-height": 120,
+    "padding": "{spacing.4}",
+    "font": "{typography.body-md}"
+  },
+
+  "number-input": {
+    "width": 100,
+    "height": "{size.num-input}",
+    "radius": "{radius-rule.input}",
+    "font": "{typography.number-sm}",
+    "empty-color": "{fg-disabled}",
+    "filled-color": "{accent}",
+    "editing-borderColor": "{accent}"
+  },
+
+  "icon-box": {
+    "sm": { "size": "{size.icon-box-sm}", "radius": "{radius-rule.icon-box}" },
+    "md": { "size": "{size.icon-box-md}", "radius": "{radius-rule.icon-box}" },
+    "lg": { "size": "{size.icon-box-lg}", "radius": "{radius-rule.icon-box}" },
+    "borderWidth": "{borderWidth.icon}",
+    "borderColor": "{bg}",
+    "$note": "border-color matches app bg for seamless avatar fallback"
+  },
+
+  "ring-progress": {
+    "calendar":  { "size": "{size.ring-cal}",   "stroke": 4 },
+    "dashboard": { "size": "{size.ring-dash}",  "stroke": 10 },
+    "tempo":     { "size": "{size.ring-tempo}", "stroke": 14 },
+    "countdown": { "size": "{size.ring-cd}",    "stroke": 16 },
+    "track-color": "{border-subtle}",
+    "fill-color":  "{accent}"
+  },
+
+  "segment-toggle": {
+    "bg": "{surface-muted}",
+    "radius-outer": "{radius-rule.segment-outer}",
+    "radius-inner": "{radius-rule.segment-inner}",
+    "height": "{size.touch}",
+    "padding": 4,
+    "active": { "bg": "{surface}", "color": "{fg}", "font": "{typography.body-sm}", "shadow": "sm" },
+    "inactive": { "color": "{fg-tertiary}" }
+  },
+
+  "tempo-field": {
+    "bg": "{surface}",
+    "borderColor": "{border}",
+    "radius": "{radius-rule.input}",
+    "padding": "{spacing.4}",
+    "gap": "{spacing.3.5}",
+    "label": "{typography.caption}",
+    "value": "{typography.number-sm}"
+  },
+
+  "session-card": {
+    "$extends": "card.default",
+    "padding": "{spacing.5}",
+    "icon-size": "{size.icon-box-md}",
+    "kcal-font": "{typography.number-sm}",
+    "gap": "{spacing.4}"
+  },
+
+  "protein-card": {
+    "$extends": "card.default",
+    "padding": "{spacing.5}",
+    "name-font": "{typography.body-lg}",
+    "meta-label": "{typography.caption}",
+    "meta-value": "{typography.body-md}",
+    "gap": "{spacing.5}"
+  },
+
+  "stat-grid": {
+    "columns": 2,
+    "gap": "{spacing.5}",
+    "label": "{typography.label}",
+    "value-font": "{typography.number-xs}",
+    "value-color": "{accent}"
+  },
+
+  "pill-nav": {
+    "bg": "{fill-strong}",
+    "radius": "{radius-rule.pill}",
+    "padding": "{spacing.2.5}",
+    "gap": "{spacing.1.5}",
+    "min-height": "{size.touch}",
+    "tab-radius": "{radius-rule.chip}",
+    "tab-padding": "{spacing.2.5} {spacing.3.5}",
+    "active-bg": "{accent}",
+    "label-color": "{on-strong}",
+    "label-font": "{typography.caption}",
+    "$note": "Always expanded. No collapsed state."
+  },
+
+  "calendar-cell": {
+    "min-height": "{size.touch}",
+    "gap": 4,
+    "date-font": "{typography.caption}",
+    "today-color": "{accent}",
+    "dot-size": 5,
+    "dot-color": "{status.success}"
+  },
+
+  "countdown": {
+    "bg": "{dark.bg}",
+    "number-font": "{typography.number-xl}",
+    "number-color": "{white}",
+    "ring-color": "{dark.accent}",
+    "label-color": "{dark.fg-secondary}",
+    "label-font": "{typography.title}"
+  },
+
+  "active-workout": {
+    "bg": "{dark.bg}",
+    "bpm-font": "{typography.number-lg}",
+    "bpm-color": "{white}",
+    "heart-color": "{dark.accent}",
+    "stat-font": "{typography.number-lg}",
+    "stat-label": "{typography.body-sm}",
+    "stat-label-color": "{dark.fg-tertiary}"
+  },
+
+  "bottom-drawer": {
+    "bg": "{dark.surface}",
+    "radius": "{radius-rule.drawer}",
+    "handle-color": "{accent}",
+    "handle-size": { "width": 40, "height": 5 },
+    "timer-font": "{typography.number-md}",
+    "timer-color": "{white}",
+    "btn-bg": "{dark.fill-pale}",
+    "btn-size": "{size.drawer-btn}",
+    "btn-lg-bg": "{dark.border-strong}",
+    "btn-lg-size": "{size.drawer-btn-lg}",
+    "ext-btn-height": "{size.btn-md}",
+    "ext-btn-radius": "{radius-rule.button}",
+    "memo-btn": { "bg": "{dark.fill-pale}", "color": "{white}" },
+    "end-btn":  { "bg": "rgba(255,107,90,0.15)", "color": "{status.error-bright}" },
+    "lock-btn": { "bg": "{dark.fill-pale}", "color": "{dark.fg-tertiary}" }
+  }
+}
