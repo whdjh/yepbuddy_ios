@@ -1,21 +1,9 @@
-Shared UI 컴포넌트 구현 플랜
+# Shared UI 컴포넌트 구현 플랜
 
-Phase 0: 다크모드 시스템 설정
+## Phase 0: 다크모드 시스템 설정
 
-현재 tailwind.config.js에 darkMode: 'class'로 설정되어 있고, global.css에 :root(Light) / .dark(Dark) CSS 변수가 정의되어 있다.
-
-사용자 핸드폰 설정에 따라 자동 전환되려면:
-
-
-
-
-
-layout.tsx: useColorScheme으로 시스템 설정 감지 후 NativeWind에 전달
-
-
-
-NativeWind v4는 darkMode: 'class' + 시스템 감지를 자동으로 처리하지만, _layout.tsx에서 최상위 View에 dark class 바인딩 필요
-
+```tsx
+// _layout.tsx
 import "../global.css";
 import { Slot } from "expo-router";
 import { useColorScheme } from "react-native";
@@ -29,114 +17,136 @@ export default function RootLayout() {
     </View>
   );
 }
+```
 
+---
 
+## Phase 1: 기본 UI 컴포넌트 (외부 의존성 없음)
 
-Phase 1: 기본 UI 컴포넌트 (외부 의존성 없음)
-
-FSD 규칙에 따라 모든 UI 컴포넌트는 src/shared/ui/에 배치. 도메인 무관 순수 UI.
-
-파일 구조
-
-src/shared/
-├── ui/
-│   ├── Button.tsx         ── 5가지 variant: primary, accent, outline, ghost, danger
-│   ├── IconButton.tsx     ── back(뒤로가기), adjust(+/-) 2가지
-│   ├── Chip.tsx           ── default/active 토글
-│   ├── Badge.tsx          ── low(green), mid(blue), high(red)
-│   ├── Card.tsx           ── outer/inner 구분, 2:1 radius rule
-│   └── index.ts           ── Public API
+```
+src/shared/ui/
+├── Button.tsx
+├── IconButton.tsx
+├── Chip.tsx
+├── FilterPill.tsx
+├── BodyPartPill.tsx
+├── Badge.tsx
+├── Card.tsx
+├── IconBox.tsx
+├── HomeIndicator.tsx
 └── index.ts
+```
 
-컴포넌트별 스펙 (HTML 기준)
+| 컴포넌트 | variant / props | 스펙 |
+|---|---|---|
+| **Button** | primary, accent, outline, ghost, danger, glass | h:52/44, r:14, px:24 |
+| **IconButton** | back-square, back-round, adjust, glass | 44×44, r:12/full/10 |
+| **Chip** | default, active, glass | h:44, r:22, border:1 |
+| **FilterPill** | default, active | h:40, r:22, px:20. 프로틴/세션 필터용 |
+| **BodyPartPill** | default, active | h:40, r:22, border:1.5. 운동 기록 부위 선택 |
+| **Badge** | low, mid, high | h:28, r:full. 다크모드 투명도 배경 |
+| **Card** | default, subtle | r:16/8, p:24/16, border:1, shadow:sm |
+| **IconBox** | sm, md, lg, xl | 44/48/56/80, r:8/full |
+| **HomeIndicator** | — | w:134, h:5, r:8. 라이트/다크 색상 분기 |
 
+---
 
+## Phase 2: 입력 컴포넌트
 
-
-
-Button: h:52(md)/44(sm), r:14, px:24. variant prop으로 스타일 분기
-
-
-
-IconButton: 44x44, r:12(back)/10(adjust). children으로 아이콘 전달
-
-
-
-Chip: h:44, r:22, border:1.5. active prop으로 토글
-
-
-
-Badge: h:28, r:pill. level prop (low/mid/high)
-
-
-
-Card: r-outer:16, r-inner:8, p:24, border:1, shadow:sm. variant prop (default/subtle)
-
-
-
-Phase 2: 입력 컴포넌트
-
+```
 src/shared/ui/
-├── Input.tsx              ── h:48, r:14, bw:1.5. focus 시 accent border
-├── Textarea.tsx           ── Input 확장, min-h:120
-├── NumberInput.tsx         ── 100x56, 3상태(empty/filled/editing), 탭 시 키패드
-└── index.ts               ── (업데이트)
+├── Input.tsx
+├── Textarea.tsx
+├── NumberInput.tsx
+├── Stepper.tsx
+├── StepperRest.tsx
+└── index.ts (업데이트)
+```
 
+| 컴포넌트 | 설명 | 스펙 |
+|---|---|---|
+| **Input** | TextInput 래핑. focus/error state | h:48, r:14, bw:1.5 |
+| **Textarea** | multiline Input | min-h:160, p:16 |
+| **NumberInput** | 탭→키패드. empty/filled/editing 3상태 | 72×56, r:14 |
+| **Stepper** | −/값/+ 수축·이완·횟수·세트용 | label+value, btn 44×44 |
+| **StepperRest** | Stepper 확장. ±10 점프 버튼 포함 | 풀 너비, 5칸 레이아웃 |
 
+---
 
+## Phase 3: SVG 컴포넌트 (react-native-svg 필요)
 
-
-Input: TextInput 래핑. focus/error state 지원
-
-
-
-Textarea: multiline Input. min-height:120
-
-
-
-NumberInput: Pressable 기반. empty(disabled색)/filled(accent색)/editing(accent border+ring) 3상태
-
-
-
-Phase 3: 복합 컴포넌트 (react-native-svg 등 필요)
-
+```
 src/shared/ui/
-├── RingProgress.tsx       ── SVG Circle 기반 원형 프로그레스. size: cal(38)/dash(90)/tempo(200)
-├── SegmentToggle.tsx      ── r-outer:12, r-inner:10, h:44. options 배열로 유연하게
-├── IconBox.tsx            ── sm(44)/md(48)/lg(56). border=bg색으로 seamless blend
-├── PillNav.tsx            ── always expanded 알약 네비. tabs 배열 기반
-├── CalendarCell.tsx       ── 날짜 + 미니 RingProgress(38px) + dot
-├── BottomDrawer.tsx       ── r:20, dark-only UI. handle + 버튼 영역
-└── index.ts               ── (업데이트)
+├── RingProgress.tsx
+├── HRChart.tsx
+├── PriceChart.tsx
+└── index.ts (업데이트)
+```
 
+| 컴포넌트 | variant / props | 스펙 |
+|---|---|---|
+| **RingProgress** | calendar(38), dashboard(90), tempo(200), countdown(240), mini(40) | stroke 가변, track+fill |
+| **HRChart** | — | SVG polyline+area, 가이드선, 피크 닷, 시작/종료 마커 |
+| **PriceChart** | — | SVG line+area, Y축 라벨, X축 날짜, 현재 포인트 닷 |
 
+---
 
+## Phase 4: 복합 레이아웃 컴포넌트
 
+```
+src/shared/ui/
+├── SegmentToggle.tsx
+├── PillNav.tsx
+├── BottomDrawer.tsx
+├── CalendarCell.tsx
+└── index.ts (업데이트)
+```
 
-RingProgress: react-native-svg 필수. stroke-dashoffset 기반 progress
+| 컴포넌트 | 설명 | 스펙 |
+|---|---|---|
+| **SegmentToggle** | 2~3옵션. active에 shadow+surface | r-outer:12, r-inner:10, h:44 |
+| **PillNav** | 하단 알약 네비. tabs 배열 | fill-strong bg, active=accent, icon+label |
+| **BottomDrawer** | 운동 중 하단 시트. 항상 다크 토큰 | r:20, handle+icon+timer+ring |
+| **CalendarCell** | 날짜 + 미니 RingProgress + dot | min-h:44, today badge |
 
+---
 
+## Phase 5: 도메인 카드 컴포넌트
 
-SegmentToggle: 2~3개 옵션, active에 shadow+surface 배경
+```
+src/shared/ui/
+├── SessionCard.tsx
+├── ProteinCard.tsx
+├── StatGrid.tsx
+├── MemoCard.tsx
+├── MapCard.tsx
+└── index.ts (업데이트)
+```
 
+| 컴포넌트 | 사용 화면 | 스펙 |
+|---|---|---|
+| **SessionCard** | 세션 리스트, 이번 주 세션 | icon+부위+kcal+날짜, Card 확장 |
+| **ProteinCard** | 프로틴 리스트 | name+badge+4칸 메타, Card 확장 |
+| **StatGrid** | 운동 상세, 요약 | 2열 그리드, label+value(accent) |
+| **MemoCard** | 운동 상세 | 다크 배경(라이트에서도), min-h:360 |
+| **MapCard** | 운동 상세 | 플레이스홀더, dot+label, h:220 |
 
+---
 
-PillNav: 하단 플로팅, fill-strong 배경, active tab에 accent 배경
+## 구현 순서
 
-
-
-BottomDrawer: 항상 dark 토큰 하드코딩 (명세서 규칙)
-
-
-
-구현 순서 요약
-
-Phase 0  _layout.tsx 다크모드 설정
+```
+Phase 0  _layout.tsx 다크모드
    ↓
-Phase 1  Button, IconButton, Chip, Badge, Card
+Phase 1  Button, IconButton, Chip, FilterPill, BodyPartPill, Badge, Card, IconBox, HomeIndicator
    ↓
-Phase 2  Input, Textarea, NumberInput
+Phase 2  Input, Textarea, NumberInput, Stepper, StepperRest
    ↓
-Phase 3  RingProgress, SegmentToggle, IconBox, PillNav, CalendarCell, BottomDrawer
+Phase 3  RingProgress, HRChart, PriceChart
+   ↓
+Phase 4  SegmentToggle, PillNav, BottomDrawer, CalendarCell
+   ↓
+Phase 5  SessionCard, ProteinCard, StatGrid, MemoCard, MapCard
+```
 
-각 Phase 완료 후 index.tsx에서 컴포넌트를 렌더링하여 시각 확인.
+총 **27개** 컴포넌트. 각 Phase 완료 후 스토리북 또는 테스트 화면에서 시각 확인.
