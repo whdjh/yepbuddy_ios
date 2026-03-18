@@ -1,4 +1,4 @@
-import { Text, Pressable, type PressableProps } from "react-native"
+import { Pressable, Text, type PressableProps } from "react-native"
 import { GlassBackground } from "./GlassBackground"
 
 type ChipVariant = "default" | "active" | "glass"
@@ -11,15 +11,18 @@ interface ChipProps extends Omit<PressableProps, "children"> {
 }
 
 const containerStyles: Record<ChipVariant, string> = {
-  default: "h-yb-chip rounded-yb-chip border-yb-input border-yb-border px-yb-6 items-center justify-center",
-  active: "h-yb-chip rounded-yb-chip border-yb-input border-yb-accent px-yb-6 items-center justify-center bg-yb-accent",
-  glass: "h-yb-chip rounded-yb-chip px-yb-6 items-center justify-center overflow-hidden active:scale-[0.97]",
+  default:
+    "h-yb-chip rounded-yb-chip border border-yb-border bg-yb-fill-pale px-yb-6 items-center justify-center",
+  active:
+    "h-yb-chip rounded-yb-chip border border-yb-accent bg-yb-accent px-yb-6 items-center justify-center",
+  glass:
+    "h-yb-chip rounded-yb-chip px-yb-6 items-center justify-center overflow-hidden active:scale-[0.97]",
 }
 
 const labelStyles: Record<ChipVariant, string> = {
-  default: "text-yb-fg text-yb-body-sm",
-  active: "text-yb-on-accent text-yb-body-sm",
-  glass: "text-yb-fg text-yb-body-sm",
+  default: "text-yb-fg text-yb-body-sm font-medium",
+  active:  "text-yb-on-accent text-yb-body-sm font-medium",
+  glass:   "text-yb-fg text-yb-body-sm font-medium",
 }
 
 export function Chip({ variant = "default", label, ...rest }: ChipProps) {

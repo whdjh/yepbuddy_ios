@@ -18,7 +18,7 @@ const containerStyles: Record<ButtonVariant, string> = {
   outline:
     "h-yb-btn-md rounded-yb-lg border-yb-input border-yb-accent px-yb-6 items-center justify-center bg-transparent active:opacity-80",
   ghost:
-    "h-yb-btn-sm rounded-yb-md px-yb-4 items-center justify-center bg-transparent active:opacity-80",
+    "h-yb-btn-sm rounded-yb-md px-yb-6 items-center justify-center bg-transparent active:opacity-80",
   danger:
     "h-yb-btn-md rounded-yb-lg bg-error-500 px-yb-6 items-center justify-center active:opacity-80",
   glass:
@@ -26,12 +26,12 @@ const containerStyles: Record<ButtonVariant, string> = {
 }
 
 const labelStyles: Record<ButtonVariant, string> = {
-  primary: "text-yb-on-strong text-yb-body-lg",
-  accent: "text-yb-on-accent text-yb-body-lg",
-  outline: "text-yb-accent text-yb-body-md font-medium",
-  ghost: "text-yb-fg-secondary text-yb-body-sm",
-  danger: "text-white text-yb-body-lg",
-  glass: "text-yb-fg text-yb-body-lg",
+  primary: "text-yb-on-strong text-yb-body-lg font-semibold",
+  accent:  "text-yb-on-accent text-yb-body-lg font-semibold",
+  outline: "text-yb-accent text-yb-body-lg font-semibold",
+  ghost:   "text-yb-fg-secondary text-yb-body-sm font-medium",
+  danger:  "text-white text-yb-body-lg font-semibold",
+  glass:   "text-yb-fg text-yb-body-lg font-semibold",
 }
 
 export function Button({ variant = "primary", label, ...rest }: ButtonProps) {
