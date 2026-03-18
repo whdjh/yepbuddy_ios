@@ -11,12 +11,13 @@ module.exports = {
       // ═══ L1: Primitive Colors ═══
       colors: {
         cream:   { 50: '#FAF7F2', 100: '#F5EFE6', 200: '#EDE4D6', 300: '#E8DFD0', 400: '#DDD2BF' },
-        sand:    { 50: '#F2EBDD', 200: '#D9C99A', 300: '#C4A87E', 400: '#B59768' },
+        sand:    { 50: '#F2EBDD', 100: '#D4883A', 200: '#D9C99A', 300: '#C4A87E', 400: '#B59768' },
         khaki:   { 300: '#9B7E56', 400: '#876B45' },
         olive:   { 200: '#7B6548', 300: '#6B5638', 400: '#5A472D' },
-        earth:   { 200: '#4A3A28', 300: '#3A2A1A', 400: '#2A1E12', 500: '#1A120A' },
-        success: { 50: '#D6F0D6', 500: '#4A8C4A', 700: '#2E5A2E' },
-        info:    { 50: '#D6E8F0', 700: '#1A4A5E' },
+        earth:   { 200: '#4A3A28', 250: '#3C3C3E', 300: '#3A2A1A', 350: '#2C2C2E', 400: '#231E17', 450: '#1C1C1E', 500: '#1A120A' },
+        neutral: { 400: '#A8A29E' },
+        success: { 50: '#D6F0D6', 400: '#34C759', 500: '#4A8C4A', 700: '#2E5A2E' },
+        info:    { 50: '#D6E8F0', 400: '#64B4F6', 700: '#1A4A5E' },
         error:   { 50: '#FDDDD6', 500: '#C0392B', 600: '#FF6B5A', 700: '#7A2419' },
 
         // ═══ L2: Semantic Colors ═══
@@ -38,6 +39,8 @@ module.exports = {
           'border-strong': 'var(--yb-border-strong)',
           'on-accent':     'var(--yb-on-accent)',
           'on-strong':     'var(--yb-on-strong)',
+          'glass-bg':      'var(--yb-glass-bg)',
+          'glass-border':  'var(--yb-glass-border)',
         },
       },
 
@@ -91,6 +94,7 @@ module.exports = {
 
       // ═══ L1: Border Radius (outer = inner × 2) ═══
       borderRadius: {
+        'yb-xs':     '3px',   // home-indicator, handle
         'yb-sm':     '8px',   // card-inner, icon-box
         'yb-md':     '10px',  // segment-inner
         'yb-icon':   '12px',  // icon-btn, segment-outer
@@ -106,16 +110,18 @@ module.exports = {
         'yb-btn-sm':     '44px',
         'yb-btn-md':     '52px',
         'yb-chip':       '44px',
+        'yb-icon-btn':   '44px',
         'yb-input':      '48px',
         'yb-num-input':  '56px',
         'yb-drawer-btn': '56px',
         'yb-drawer-lg':  '64px',
       },
       width: {
-        'yb-icon-sm':  '44px',
-        'yb-icon-md':  '48px',
-        'yb-icon-lg':  '56px',
-        'yb-num-input':'100px',
+        'yb-icon-btn':  '44px',
+        'yb-icon-sm':   '44px',
+        'yb-icon-md':   '48px',
+        'yb-icon-lg':   '56px',
+        'yb-num-input': '72px',
       },
       minHeight: {
         'yb-touch': '44px',
@@ -133,6 +139,17 @@ module.exports = {
         'yb':      '1px',
         'yb-input':'1.5px',
         'yb-icon': '1.5px',
+      },
+
+      // ═══ Liquid Glass ═══
+      backdropBlur: {
+        'yb-sm': '8px',
+        'yb-md': '16px',
+        'yb-lg': '24px',
+        'yb-xl': '40px',
+      },
+      backdropSaturate: {
+        'yb-glass': '1.8',
       },
     },
   },

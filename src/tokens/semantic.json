@@ -1,5 +1,5 @@
 {
-  "$description": "yepbuddy — Layer 2: Semantic Tokens · Primitive를 용도별로 매핑 · Light/Dark",
+  "$description": "yepbuddy — Layer 2: Semantic Tokens · Primitive를 용도별로 매핑 · Light/Dark · Liquid Glass",
 
   "light": {
     "bg":              "{cream.50}",
@@ -140,5 +140,39 @@
     "pill":          "{radius.full}",
 
     "$note-icon-btn-round": "상세 페이지 뒤로가기 버튼은 원형(full radius)"
+  },
+
+  "glass": {
+    "$description": "Liquid Glass 머티리얼 — expo-blur BlurView 또는 expo-glass-effect GlassView 사용",
+
+    "light": {
+      "tint": "light",
+      "bg":        "rgba(255,255,255,0.65)",
+      "bg-thin":   "rgba(255,255,255,0.35)",
+      "border":    "rgba(255,255,255,0.5)",
+      "highlight": "rgba(255,255,255,0.8)",
+      "blur":      "{glass.blur.md}",
+      "intensity": "{glass.intensity.regular}"
+    },
+
+    "dark": {
+      "tint": "dark",
+      "bg":        "rgba(255,255,255,0.12)",
+      "bg-thin":   "rgba(255,255,255,0.06)",
+      "border":    "rgba(255,255,255,0.18)",
+      "highlight": "rgba(255,255,255,0.25)",
+      "blur":      "{glass.blur.md}",
+      "intensity": "{glass.intensity.regular}"
+    },
+
+    "workout": {
+      "tint": "dark",
+      "bg":        "rgba(60,55,45,0.75)",
+      "border":    "rgba(255,255,255,0.1)",
+      "blur":      "{glass.blur.lg}",
+      "intensity": "{glass.intensity.strong}"
+    },
+
+    "$note-implementation": "RN: expo-blur(BlurView intensity/tint) 또는 expo-glass-effect(GlassView). Web: backdrop-filter: blur() saturate()"
   }
 }

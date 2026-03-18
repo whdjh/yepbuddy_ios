@@ -118,6 +118,7 @@
 
   "radius": {
     "none":   0,
+    "xs":     3,
     "sm":     8,
     "md":     10,
     "icon":   12,
@@ -163,5 +164,21 @@
     "sm": { "offset": [0, 1], "blur": 3, "color": "rgba(0,0,0,0.15)" },
     "md": { "offset": [0, 4], "blur": 8, "color": "rgba(0,0,0,0.20)" },
     "lg": { "offset": [0, 10], "blur": 25, "color": "rgba(0,0,0,0.35)" }
+  },
+
+  "glass": {
+    "$description": "Liquid Glass 프리미티브 — 블러·강도·채도 원시 값",
+    "blur": {
+      "sm":  8,
+      "md":  16,
+      "lg":  24,
+      "xl":  40
+    },
+    "intensity": {
+      "subtle":  20,
+      "regular": 50,
+      "strong":  80
+    },
+    "saturation": 180
   }
 }

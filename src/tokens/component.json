@@ -1,5 +1,5 @@
 {
-  "$description": "yepbuddy — Layer 3: Component Tokens · Semantic을 컴포넌트별로 매핑",
+  "$description": "yepbuddy — Layer 3: Component Tokens · Semantic을 컴포넌트별로 매핑 · Liquid Glass 대응",
 
   "button": {
     "primary":  { "bg": "{fill-strong}",  "color": "{on-strong}",  "height": "{size.btn-md}", "radius": "{radius-rule.button}", "font": "{typography.body-lg}" },
@@ -25,14 +25,14 @@
 
   "filter-pill": {
     "$description": "프로틴/세션 리스트 필터용 — chip보다 작음",
-    "default": { "bg": "{fill-pale}", "color": "{fg-secondary}", "height": 40, "radius": "{radius-rule.chip}", "font": "{typography.body-sm}" },
+    "default": { "bg": "{fill-pale}", "color": "{fg-secondary}", "height": 40, "radius": "{radius-rule.chip}", "font": "{typography.body-sm}", "font-weight": "{font.weight.semibold}" },
     "active":  { "bg": "{accent}",    "color": "{on-accent}",   "height": 40, "radius": "{radius-rule.chip}" },
     "padding-x": "{spacing.5}"
   },
 
   "body-part-pill": {
     "$description": "운동 기록 — 운동 부위 선택 필",
-    "default": { "bg": "transparent", "color": "{fg}", "borderColor": "{border}", "borderWidth": "{borderWidth.input}", "height": 40, "radius": "{radius-rule.chip}", "font": "{typography.body-sm}" },
+    "default": { "bg": "transparent", "color": "{fg}", "borderColor": "{border}", "borderWidth": "{borderWidth.input}", "height": 40, "radius": "{radius-rule.chip}", "font": "{typography.body-sm}", "font-weight": "{font.weight.semibold}" },
     "active":  { "bg": "{fill-strong}", "color": "{on-strong}", "borderColor": "{fill-strong}" },
     "padding-x": "{spacing.5}"
   },
@@ -45,6 +45,7 @@
     "radius": "{radius-rule.pill}",
     "padding-x": "{spacing.3}",
     "font": "{typography.caption}",
+    "font-weight": "{font.weight.bold}",
 
     "$dark-overrides": {
       "low":  { "bg": "{status-dark.success-bg}", "color": "{status-dark.success-text}" },
@@ -55,7 +56,22 @@
 
   "card": {
     "default": { "bg": "{surface}",        "borderColor": "{border}", "borderWidth": "{borderWidth.default}", "radius": "{radius-rule.card-outer}", "padding": "{layout.card-padding}", "shadow": "sm" },
-    "subtle":  { "bg": "{surface-subtle}",  "borderColor": "{border}", "radius": "{radius-rule.card-inner}", "padding": "{layout.card-inner-pad}" }
+    "subtle":  { "bg": "{surface-subtle}",  "borderColor": "{border}", "radius": "{radius-rule.card-inner}", "padding": "{layout.card-inner-pad}" },
+    "glass": {
+      "$description": "Liquid Glass 카드 — BlurView + 반투명 배경",
+      "material": "glass",
+      "bg-light":         "{glass.light.bg}",
+      "bg-dark":          "{glass.dark.bg}",
+      "borderColor-light": "{glass.light.border}",
+      "borderColor-dark":  "{glass.dark.border}",
+      "borderWidth":       "{borderWidth.default}",
+      "radius":            "{radius-rule.card-outer}",
+      "padding":           "{layout.card-padding}",
+      "blur-light":        "{glass.light.blur}",
+      "blur-dark":         "{glass.dark.blur}",
+      "intensity-light":   "{glass.light.intensity}",
+      "intensity-dark":    "{glass.dark.intensity}"
+    }
   },
 
   "input": {
@@ -69,9 +85,7 @@
     "$extends": "input.default",
     "min-height": 160,
     "padding": "{spacing.4}",
-    "font": "{typography.body-md}",
-
-    "$note": "운동 기록 메모 — min-height 120→160 실제 화면 기준"
+    "font": "{typography.body-md}"
   },
 
   "number-input": {
@@ -81,9 +95,7 @@
     "font": "{typography.number-sm}",
     "empty-color": "{fg-disabled}",
     "filled-color": "{accent}",
-    "editing-borderColor": "{accent}",
-
-    "$note": "width 100→72 실제 세트수 박스 사이즈 반영"
+    "editing-borderColor": "{accent}"
   },
 
   "icon-box": {
@@ -92,9 +104,7 @@
     "lg": { "size": "{size.icon-box-lg}", "radius": "{radius-rule.icon-box}" },
     "xl": { "size": 80, "radius": "{radius-rule.pill}" },
     "borderWidth": "{borderWidth.icon}",
-    "borderColor": "{bg}",
-
-    "$note-xl": "운동 기록 상단 원형 아이콘 — 80px, full radius"
+    "borderColor": "{bg}"
   },
 
   "ring-progress": {
@@ -104,9 +114,7 @@
     "countdown": { "size": "{size.ring-cd}",    "stroke": 16 },
     "mini":      { "size": 40,                  "stroke": 4 },
     "track-color": "{border-subtle}",
-    "fill-color":  "{accent}",
-
-    "$note-mini": "운동 중 하단 시트 미니 링 프로그레스"
+    "fill-color":  "{accent}"
   },
 
   "segment-toggle": {
@@ -115,8 +123,8 @@
     "radius-inner": "{radius-rule.segment-inner}",
     "height": "{size.touch}",
     "padding": 4,
-    "active": { "bg": "{surface}", "color": "{fg}", "font": "{typography.body-sm}", "shadow": "sm" },
-    "inactive": { "color": "{fg-tertiary}" }
+    "active":   { "bg": "{surface}", "color": "{fg}", "font": "{typography.body-md}", "font-weight": "{font.weight.semibold}", "shadow": "sm" },
+    "inactive": { "color": "{fg-tertiary}", "font-weight": "{font.weight.semibold}" }
   },
 
   "stepper": {
@@ -125,8 +133,8 @@
     "borderColor": "{border}",
     "borderWidth": "{borderWidth.default}",
     "radius": "{radius-rule.input}",
-    "padding": "{spacing.4}",
-    "gap": "{spacing.3.5}",
+    "padding": "{spacing.3.5}",
+    "gap": "{spacing.2}",
     "label-font": "{typography.caption}",
     "label-color": "{fg-secondary}",
     "value-font": "{typography.number-sm}",
@@ -142,17 +150,19 @@
     "jump-btn-size": "{size.icon-btn}",
     "jump-btn-bg": "{surface-muted}",
     "jump-btn-color": "{fg-secondary}",
-    "jump-btn-font": "{typography.label}"
+    "jump-btn-font": "{typography.label}",
+    "jump-btn-font-weight": "{font.weight.bold}"
   },
 
   "session-card": {
     "$extends": "card.default",
     "padding": "{spacing.5}",
-    "icon-size": "{size.icon-box-md}",
+    "icon-size": "{size.icon-box-lg}",
     "icon-radius": "{radius-rule.input}",
     "kcal-font": "{typography.number-sm}",
     "kcal-color": "{accent}",
     "part-font": "{typography.body-sm}",
+    "part-font-weight": "{font.weight.semibold}",
     "part-color": "{fg-secondary}",
     "date-font": "{typography.body-sm}",
     "date-color": "{fg-secondary}",
@@ -163,9 +173,11 @@
     "$extends": "card.default",
     "padding": "{spacing.5}",
     "name-font": "{typography.body-lg}",
+    "name-font-weight": "{font.weight.bold}",
     "meta-label": "{typography.caption}",
     "meta-label-color": "{fg-secondary}",
     "meta-value": "{typography.body-md}",
+    "meta-value-weight": "{font.weight.bold}",
     "meta-accent": "{accent}",
     "gap": "{spacing.5}"
   },
@@ -183,7 +195,7 @@
     "$description": "운동 상세 — 메모 영역",
     "light": { "bg": "{earth.300}", "color": "rgba(250,247,242,0.5)" },
     "dark":  { "bg": "{earth.350}", "color": "rgba(255,255,255,0.35)" },
-    "min-height": 360,
+    "min-height": 200,
     "radius": "{radius-rule.card-outer}",
     "padding": "{spacing.6}",
     "font": "{typography.body-md}"
@@ -206,7 +218,7 @@
     "$description": "운동 상세 — 지도 플레이스홀더",
     "light": { "bg": "{cream.200}" },
     "dark":  { "bg": "{earth.350}" },
-    "height": 220,
+    "height": 140,
     "radius": "{radius-rule.card-outer}",
     "dot-color": "{status.success}",
     "dot-size": 12,
@@ -230,22 +242,25 @@
   "pill-nav": {
     "bg": "{fill-strong}",
     "radius": "{radius-rule.pill}",
-    "padding": "{spacing.2.5}",
+    "padding": "{spacing.1.5}",
     "gap": "{spacing.1.5}",
     "min-height": "{size.touch}",
-    "tab-radius": "{radius-rule.chip}",
-    "tab-padding": "{spacing.2.5} {spacing.3.5}",
+    "tab-radius": "{radius-rule.card-outer}",
+    "tab-padding-y": "{spacing.2.5}",
     "active-bg": "{accent}",
     "label-color": "{on-strong}",
     "label-active-color": "{on-accent}",
-    "label-font": "{typography.caption}",
-    "icon-size": 20
+    "label-font": { "size": 11, "weight": "{font.weight.semibold}" },
+    "icon-size": 20,
+    "material": "glass",
+
+    "$note": "Liquid Glass — expo-blur BlurView 위에 fill-strong 틴트 오버레이"
   },
 
   "home-indicator": {
     "width": 134,
     "height": 5,
-    "radius": "{radius.sm}",
+    "radius": "{radius.xs}",
     "light": { "bg": "{earth.300}", "opacity": 0.15 },
     "dark":  { "bg": "{white}",     "opacity": 0.15 }
   },
@@ -254,8 +269,9 @@
     "min-height": "{size.touch}",
     "gap": 4,
     "date-font": "{typography.caption}",
+    "date-font-weight": "{font.weight.semibold}",
     "today-bg": "{accent}",
-    "today-color-light": "{white}",
+    "today-color-light": "{on-accent}",
     "today-color-dark":  "{on-accent}",
     "today-size": 24,
     "today-radius": "{radius.full}",
@@ -298,25 +314,27 @@
   "bottom-drawer": {
     "bg": "{workout.surface}",
     "radius": "{radius-rule.drawer}",
-    "handle-color": "rgba(255,255,255,0.25)",
+    "handle-color": "rgba(255,255,255,0.2)",
     "handle-size": { "width": 40, "height": 5 },
-    "timer-font": "{typography.number-md}",
-    "timer-color": "{white}",
-    "btn-bg": "rgba(255,255,255,0.1)",
-    "btn-size": "{size.drawer-btn}",
-    "btn-radius": "{radius-rule.icon-btn}",
+    "timer-font": { "size": 36, "weight": "{font.weight.bold}", "leading": "{font.lineHeight.none}" },
+    "timer-color": "{workout.accent}",
+    "btn-bg": "rgba(255,255,255,0.08)",
+    "btn-pause-bg": "rgba(255,255,255,0.12)",
+    "btn-size": "{size.drawer-btn-lg}",
+    "btn-radius": "{radius-rule.card-outer}",
     "mini-ring-size": 40,
     "mini-ring-stroke": 4,
     "mini-ring-track": "rgba(255,255,255,0.12)",
     "mini-ring-fill": "rgba(200,173,126,0.6)",
+    "material": "glass.workout",
 
     "$extended-state": {
-      "memo-btn": { "bg": "rgba(255,255,255,0.1)", "color": "{white}" },
-      "end-btn":  { "bg": "rgba(255,107,90,0.15)", "color": "{status.error-bright}" },
-      "lock-btn": { "bg": "rgba(255,255,255,0.1)", "color": "{cream.400}" }
+      "end-btn":  { "bg": "rgba(255,107,90,0.15)", "color": "{status.error-bright}", "height": "{size.drawer-btn}", "radius": "{radius-rule.button}" },
+      "safe-btn": { "bg": "rgba(255,255,255,0.08)", "color": "{white}", "height": "{size.drawer-btn}", "radius": "{radius-rule.button}" },
+      "lock-btn": { "bg": "rgba(255,255,255,0.08)", "color": "rgba(255,255,255,0.5)", "height": "{size.drawer-btn}", "radius": "{radius-rule.button}" }
     },
 
     "offset-y-collapsed": -20,
-    "$note": "하단 시트는 기본 상태에서 bottom:-20px으로 살짝 짤려 보임"
+    "$note": "Liquid Glass 하단 시트 — expo-blur 또는 expo-glass-effect 사용"
   }
 }
