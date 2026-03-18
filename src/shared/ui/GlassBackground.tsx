@@ -1,8 +1,8 @@
-import { View } from "react-native"
 import {
   GlassView,
   isLiquidGlassAvailable,
 } from "expo-glass-effect"
+import { View } from "react-native"
 
 import type { GlassStyle } from "expo-glass-effect"
 

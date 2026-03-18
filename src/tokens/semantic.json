@@ -10,7 +10,7 @@
     "fill-strong":     "{earth.300}",
 
     "fg":              "{earth.300}",
-    "fg-secondary":    "#5A4A36",
+    "fg-secondary":    "{khaki.400}",
     "fg-tertiary":     "{olive.300}",
     "fg-disabled":     "{neutral.400}",
 
@@ -22,13 +22,15 @@
     "border-strong":   "{sand.400}",
 
     "on-accent":       "{cream.50}",
-    "on-strong":       "{cream.50}"
+    "on-strong":       "{cream.50}",
+
+    "$note-fg-secondary": "기존 #5A4A36 → khaki.400(#876B45)로 변경. 실제 화면과 일치"
   },
 
   "dark": {
-    "bg":              "{earth.500}",
-    "surface":         "{earth.300}",
-    "surface-subtle":  "{earth.400}",
+    "bg":              "{earth.450}",
+    "surface":         "{earth.350}",
+    "surface-subtle":  "{earth.250}",
     "surface-muted":   "{earth.200}",
     "fill-pale":       "{olive.400}",
     "fill-strong":     "{cream.200}",
@@ -38,69 +40,105 @@
     "fg-tertiary":     "{cream.400}",
     "fg-disabled":     "{olive.200}",
 
-    "accent":          "{sand.200}",
+    "accent":          "{sand.100}",
     "accent-hover":    "{sand.300}",
 
     "border":          "{olive.400}",
     "border-subtle":   "{earth.200}",
     "border-strong":   "{olive.200}",
 
-    "on-accent":       "{earth.500}",
-    "on-strong":       "{earth.500}"
+    "on-accent":       "{earth.450}",
+    "on-strong":       "{earth.450}",
+
+    "$note-bg":      "#1C1C1E (earth.450) — 실제 다크 화면 배경",
+    "$note-surface": "#2C2C2E (earth.350) — 다크 카드 배경",
+    "$note-accent":  "#D4883A (sand.100) — 다크 오렌지 액센트"
+  },
+
+  "workout": {
+    "$description": "운동 중/카운트다운 전용 다크 팔레트",
+    "bg":              "{earth.400}",
+    "surface":         "rgba(60,55,45,0.92)",
+    "fg":              "{white}",
+    "fg-secondary":    "rgba(255,255,255,0.45)",
+    "accent":          "{sand.300}",
+    "heart":           "{sand.300}",
+
+    "$note-bg": "#231E17 (earth.400) — 운동 중/카운트다운 배경"
   },
 
   "status": {
-    "success-bg":   "{success.50}",
-    "success-text":  "{success.700}",
-    "success":       "{success.500}",
-    "info-bg":       "{info.50}",
-    "info-text":     "{info.700}",
-    "error-bg":      "{error.50}",
-    "error-text":    "{error.700}",
-    "error":         "{error.500}",
-    "error-bright":  "{error.600}"
+    "success-bg":      "{success.50}",
+    "success-text":    "{success.700}",
+    "success":         "{success.500}",
+    "success-bright":  "{success.400}",
+    "info-bg":         "{info.50}",
+    "info-text":       "{info.700}",
+    "info-bright":     "{info.400}",
+    "error-bg":        "{error.50}",
+    "error-text":      "{error.700}",
+    "error":           "{error.500}",
+    "error-bright":    "{error.600}",
+
+    "$note-success-bright": "#34C759 — 다크 모드 그린 아이콘/닷",
+    "$note-info-bright":    "#64B4F6 — 다크 모드 저점 뱃지"
+  },
+
+  "status-dark": {
+    "$description": "다크 모드 뱃지/상태 배경은 투명도 기반",
+    "success-bg":  "rgba(52,199,89,0.15)",
+    "info-bg":     "rgba(100,180,246,0.15)",
+    "error-bg":    "rgba(239,83,80,0.15)",
+    "success-text": "{success.400}",
+    "info-text":    "{info.400}",
+    "error-text":   "{error.600}"
   },
 
   "typography": {
-    "display":    { "size": "{font.size.6xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.snug}",    "tracking": "{font.letterSpacing.tight}" },
+    "display":    { "size": "{font.size.6xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.snug}",   "tracking": "{font.letterSpacing.tight}" },
     "heading-lg": { "size": "{font.size.4xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.snug}" },
     "heading-md": { "size": "{font.size.3xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.snug}" },
     "heading-sm": { "size": "{font.size.2xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.snug}" },
     "title":      { "size": "{font.size.xl}",   "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.snug}" },
-    "body-lg":    { "size": "{font.size.lg}",   "weight": "{font.weight.semibold}",  "leading": "{font.lineHeight.normal}" },
+    "body-lg":    { "size": "{font.size.lg}",   "weight": "{font.weight.semibold}", "leading": "{font.lineHeight.normal}" },
     "body-md":    { "size": "{font.size.md}",   "weight": "{font.weight.regular}",  "leading": "{font.lineHeight.relaxed}" },
-    "body-sm":    { "size": "{font.size.base}",  "weight": "{font.weight.medium}",   "leading": "{font.lineHeight.normal}" },
-    "label":      { "size": "{font.size.sm}",   "weight": "{font.weight.semibold}",  "leading": "{font.lineHeight.tight}" },
+    "body-sm":    { "size": "{font.size.base}",  "weight": "{font.weight.medium}",  "leading": "{font.lineHeight.normal}" },
+    "label":      { "size": "{font.size.sm}",   "weight": "{font.weight.semibold}", "leading": "{font.lineHeight.tight}" },
     "caption":    { "size": "{font.size.xs}",   "weight": "{font.weight.medium}",   "leading": "{font.lineHeight.snug}" },
     "number-xl":  { "size": "{font.size.10xl}", "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.none}" },
-    "number-lg":  { "size": "{font.size.8xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.none}" },
+    "number-lg":  { "size": "{font.size.9xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.none}" },
     "number-md":  { "size": "{font.size.7xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.none}" },
     "number-sm":  { "size": "{font.size.4xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.none}" },
-    "number-xs":  { "size": "{font.size.3xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.none}" }
+    "number-xs":  { "size": "{font.size.3xl}",  "weight": "{font.weight.bold}",     "leading": "{font.lineHeight.none}" },
+
+    "$note-number-lg": "기존 8xl(40) → 9xl(72)로 변경. 운동 중 심박수 실제 사이즈 반영"
   },
 
   "layout": {
-    "screen-px":       "{spacing.5}",
-    "card-padding":    "{spacing.6}",
-    "card-inner-pad":  "{spacing.4}",
-    "section-gap":     "{spacing.6}",
-    "grid-gap":        "{spacing.4}",
-    "component-gap":   "{spacing.3}",
-    "chip-gap":        "{spacing.2.5}"
+    "screen-px":      "{spacing.5}",
+    "card-padding":   "{spacing.6}",
+    "card-inner-pad": "{spacing.4}",
+    "section-gap":    "{spacing.6}",
+    "grid-gap":       "{spacing.4}",
+    "component-gap":  "{spacing.3}",
+    "chip-gap":       "{spacing.2.5}"
   },
 
   "radius-rule": {
-    "$description": "outer = inner × 2",
-    "card-outer":  "{radius.xl}",
-    "card-inner":  "{radius.sm}",
-    "button":      "{radius.lg}",
-    "input":       "{radius.lg}",
-    "icon-btn":    "{radius.icon}",
-    "icon-box":    "{radius.sm}",
+    "$description": "outer = inner × 2 원칙",
+    "card-outer":    "{radius.xl}",
+    "card-inner":    "{radius.sm}",
+    "button":        "{radius.lg}",
+    "input":         "{radius.lg}",
+    "icon-btn":      "{radius.icon}",
+    "icon-btn-round": "{radius.full}",
+    "icon-box":      "{radius.sm}",
     "segment-outer": "{radius.icon}",
     "segment-inner": "{radius.md}",
-    "chip":        "{radius.chip}",
-    "drawer":      "{radius.drawer}",
-    "pill":        "{radius.full}"
+    "chip":          "{radius.chip}",
+    "drawer":        "{radius.drawer}",
+    "pill":          "{radius.full}",
+
+    "$note-icon-btn-round": "상세 페이지 뒤로가기 버튼은 원형(full radius)"
   }
 }

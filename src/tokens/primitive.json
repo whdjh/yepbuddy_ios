@@ -11,6 +11,7 @@
     },
     "sand": {
       "50":  "#F2EBDD",
+      "100": "#D4883A",
       "200": "#D9C99A",
       "300": "#C4A87E",
       "400": "#B59768"
@@ -26,17 +27,35 @@
     },
     "earth": {
       "200": "#4A3A28",
+      "250": "#3C3C3E",
       "300": "#3A2A1A",
-      "400": "#2A1E12",
+      "350": "#2C2C2E",
+      "400": "#231E17",
+      "450": "#1C1C1E",
       "500": "#1A120A"
     },
     "neutral": {
       "400": "#A8A29E"
     },
     "white":  "#FFFFFF",
-    "success": { "50": "#D6F0D6", "500": "#4A8C4A", "700": "#2E5A2E" },
-    "info":    { "50": "#D6E8F0", "700": "#1A4A5E" },
-    "error":   { "50": "#FDDDD6", "500": "#C0392B", "600": "#FF6B5A", "700": "#7A2419" }
+    "black":  "#000000",
+    "success": {
+      "50":  "#D6F0D6",
+      "400": "#34C759",
+      "500": "#4A8C4A",
+      "700": "#2E5A2E"
+    },
+    "info": {
+      "50":  "#D6E8F0",
+      "400": "#64B4F6",
+      "700": "#1A4A5E"
+    },
+    "error": {
+      "50":  "#FDDDD6",
+      "500": "#C0392B",
+      "600": "#FF6B5A",
+      "700": "#7A2419"
+    }
   },
 
   "font": {
@@ -63,7 +82,7 @@
     "weight": {
       "regular":  "400",
       "medium":   "500",
-      "semibold":  "600",
+      "semibold": "600",
       "bold":     "700"
     },
     "lineHeight": {
@@ -87,6 +106,7 @@
     "2":   8,
     "2.5": 10,
     "3":   12,
+    "3.5": 14,
     "4":   16,
     "5":   20,
     "6":   24,
@@ -97,34 +117,34 @@
   },
 
   "radius": {
-    "none": 0,
-    "sm":   8,
-    "md":   10,
-    "icon": 12,
-    "lg":   14,
-    "xl":   16,
+    "none":   0,
+    "sm":     8,
+    "md":     10,
+    "icon":   12,
+    "lg":     14,
+    "xl":     16,
     "drawer": 20,
-    "chip": 22,
-    "full": 9999
+    "chip":   22,
+    "full":   9999
   },
 
   "size": {
-    "touch":        44,
-    "btn-md":       52,
-    "btn-sm":       44,
-    "chip":         44,
-    "input":        48,
-    "num-input":    56,
-    "icon-btn":     44,
-    "icon-box-sm":  44,
-    "icon-box-md":  48,
-    "icon-box-lg":  56,
-    "drawer-btn":   56,
+    "touch":         44,
+    "btn-md":        52,
+    "btn-sm":        44,
+    "chip":          44,
+    "input":         48,
+    "num-input":     56,
+    "icon-btn":      44,
+    "icon-box-sm":   44,
+    "icon-box-md":   48,
+    "icon-box-lg":   56,
+    "drawer-btn":    56,
     "drawer-btn-lg": 64,
-    "ring-cal":     38,
-    "ring-dash":    90,
-    "ring-tempo":   200,
-    "ring-cd":      240
+    "ring-cal":      38,
+    "ring-dash":     90,
+    "ring-tempo":    200,
+    "ring-cd":       240
   },
 
   "borderWidth": {
@@ -134,8 +154,14 @@
   },
 
   "shadow": {
-    "sm":  { "offset": [0, 1], "blur": 3, "color": "rgba(58,42,26,0.08)" },
-    "md":  { "offset": [0, 4], "blur": 6, "color": "rgba(58,42,26,0.06)" },
-    "lg":  { "offset": [0, 10], "blur": 25, "color": "rgba(58,42,26,0.15)" }
+    "sm": { "offset": [0, 1], "blur": 3, "color": "rgba(58,42,26,0.08)" },
+    "md": { "offset": [0, 4], "blur": 6, "color": "rgba(58,42,26,0.06)" },
+    "lg": { "offset": [0, 10], "blur": 25, "color": "rgba(58,42,26,0.15)" }
+  },
+
+  "shadow-dark": {
+    "sm": { "offset": [0, 1], "blur": 3, "color": "rgba(0,0,0,0.15)" },
+    "md": { "offset": [0, 4], "blur": 8, "color": "rgba(0,0,0,0.20)" },
+    "lg": { "offset": [0, 10], "blur": 25, "color": "rgba(0,0,0,0.35)" }
   }
 }
