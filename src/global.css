@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    /* ── 시맨틱 컬러 (라이트) ── */
     --yb-bg: #FAF7F2;
     --yb-surface: #FFFFFF;
     --yb-surface-subtle: #F5EFE6;
@@ -21,11 +22,25 @@
     --yb-border-strong: #B59768;
     --yb-on-accent: #FAF7F2;
     --yb-on-strong: #FAF7F2;
-    --yb-glass-bg: rgba(255, 255, 255, 0.65);
-    --yb-glass-border: rgba(255, 255, 255, 0.5);
+    --yb-glass-bg: rgba(255,255,255,0.65);
+    --yb-glass-border: rgba(255,255,255,0.5);
+
+    /* ── status 컬러 (라이트) — OKLCH L 균일화 ── */
+    --yb-status-success-bg: #D6FAD6;
+    --yb-status-success-text: #17501D;
+    --yb-status-success: #308639;
+    --yb-status-success-bright: #43C251;
+    --yb-status-info-bg: #DBF1FF;
+    --yb-status-info-text: #1D456B;
+    --yb-status-info-bright: #60AAF3;
+    --yb-status-error-bg: #FFE2DE;
+    --yb-status-error-text: #722423;
+    --yb-status-error: #BD413F;
+    --yb-status-error-bright: #E85854;
   }
 
   .dark {
+    /* ── 시맨틱 컬러 (다크) ── */
     --yb-bg: #1C1C1E;
     --yb-surface: #2C2C2E;
     --yb-surface-subtle: #3C3C3E;
@@ -43,7 +58,20 @@
     --yb-border-strong: #7B6548;
     --yb-on-accent: #1C1C1E;
     --yb-on-strong: #1C1C1E;
-    --yb-glass-bg: rgba(255, 255, 255, 0.12);
-    --yb-glass-border: rgba(255, 255, 255, 0.18);
+    --yb-glass-bg: rgba(255,255,255,0.12);
+    --yb-glass-border: rgba(255,255,255,0.18);
+
+    /* ── status 컬러 (다크) — APCA 명도대비 강화 ── */
+    --yb-status-success-bg: rgba(67,194,81,0.18);
+    --yb-status-success-text: #43C251;
+    --yb-status-success: #43C251;
+    --yb-status-success-bright: #43C251;
+    --yb-status-info-bg: rgba(96,170,243,0.18);
+    --yb-status-info-text: #60AAF3;
+    --yb-status-info-bright: #60AAF3;
+    --yb-status-error-bg: rgba(232,88,84,0.18);
+    --yb-status-error-text: #E85854;
+    --yb-status-error: #E85854;
+    --yb-status-error-bright: #E85854;
   }
 }

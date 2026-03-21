@@ -16,9 +16,9 @@ module.exports = {
         olive:   { 200: '#7B6548', 300: '#6B5638', 400: '#5A472D' },
         earth:   { 200: '#4A3A28', 250: '#3C3C3E', 300: '#3A2A1A', 350: '#2C2C2E', 400: '#231E17', 450: '#1C1C1E', 500: '#1A120A' },
         neutral: { 400: '#A8A29E' },
-        success: { 50: '#D6F0D6', 400: '#34C759', 500: '#4A8C4A', 700: '#2E5A2E' },
-        info:    { 50: '#D6E8F0', 400: '#64B4F6', 700: '#1A4A5E' },
-        error:   { 50: '#FDDDD6', 500: '#C0392B', 600: '#FF6B5A', 700: '#7A2419' },
+        success: { 50: '#D6FAD6', 100: '#BEEDBE', 400: '#43C251', 500: '#308639', 700: '#17501D', 800: '#0D3811' },
+        info:    { 50: '#DBF1FF', 100: '#C1E2FF', 400: '#60AAF3', 500: '#4075AA', 700: '#1D456B', 800: '#142F4B' },
+        error:   { 50: '#FFE2DE', 100: '#FFCDC7', 400: '#FD736D', 500: '#BD413F', 600: '#E85854', 700: '#722423', 800: '#521615' },
 
         // ═══ L2: Semantic Colors ═══
         yb: {
@@ -41,6 +41,18 @@ module.exports = {
           'on-strong':     'var(--yb-on-strong)',
           'glass-bg':      'var(--yb-glass-bg)',
           'glass-border':  'var(--yb-glass-border)',
+          // ═══ Status Semantic (CSS 변수 — light/dark 자동 전환) ═══
+          'status-success-bg':      'var(--yb-status-success-bg)',
+          'status-success-text':    'var(--yb-status-success-text)',
+          'status-success':         'var(--yb-status-success)',
+          'status-success-bright':  'var(--yb-status-success-bright)',
+          'status-info-bg':         'var(--yb-status-info-bg)',
+          'status-info-text':       'var(--yb-status-info-text)',
+          'status-info-bright':     'var(--yb-status-info-bright)',
+          'status-error-bg':        'var(--yb-status-error-bg)',
+          'status-error-text':      'var(--yb-status-error-text)',
+          'status-error':           'var(--yb-status-error)',
+          'status-error-bright':    'var(--yb-status-error-bright)',
         },
       },
 

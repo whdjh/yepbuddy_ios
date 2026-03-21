@@ -4,16 +4,16 @@ type BadgeLevel = "low" | "mid" | "high"
 
 const badgeStyles: Record<BadgeLevel, { container: string; text: string }> = {
   low: {
-    container: "bg-success-50 dark:bg-success-400/15",
-    text:      "text-success-700 dark:text-success-400",
+    container: "bg-yb-status-success-bg",
+    text:      "text-yb-status-success-text",
   },
   mid: {
-    container: "bg-info-50 dark:bg-info-400/15",
-    text:      "text-info-700 dark:text-info-400",
+    container: "bg-yb-status-info-bg",
+    text:      "text-yb-status-info-text",
   },
   high: {
-    container: "bg-error-50 dark:bg-error-600/15",
-    text:      "text-error-700 dark:text-error-600",
+    container: "bg-yb-status-error-bg",
+    text:      "text-yb-status-error-text",
   },
 }
 

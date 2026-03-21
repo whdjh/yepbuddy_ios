@@ -38,20 +38,15 @@
   },
 
   "badge": {
-    "low":  { "bg": "{status.success-bg}", "color": "{status.success-text}" },
-    "mid":  { "bg": "{status.info-bg}",    "color": "{status.info-text}" },
-    "high": { "bg": "{status.error-bg}",   "color": "{status.error-text}" },
+    "$description": "CSS 변수로 라이트/다크 자동 전환 — dark: 수정자 불필요",
+    "low":  { "bg": "var(--yb-status-success-bg)", "color": "var(--yb-status-success-text)" },
+    "mid":  { "bg": "var(--yb-status-info-bg)",    "color": "var(--yb-status-info-text)" },
+    "high": { "bg": "var(--yb-status-error-bg)",   "color": "var(--yb-status-error-text)" },
     "height": 28,
     "radius": "{radius-rule.pill}",
     "padding-x": "{spacing.3}",
     "font": "{typography.caption}",
-    "font-weight": "{font.weight.bold}",
-
-    "$dark-overrides": {
-      "low":  { "bg": "{status-dark.success-bg}", "color": "{status-dark.success-text}" },
-      "mid":  { "bg": "{status-dark.info-bg}",    "color": "{status-dark.info-text}" },
-      "high": { "bg": "{status-dark.error-bg}",   "color": "{status-dark.error-text}" }
-    }
+    "font-weight": "{font.weight.bold}"
   },
 
   "card": {

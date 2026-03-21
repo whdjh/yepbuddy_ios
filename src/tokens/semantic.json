@@ -67,7 +67,8 @@
     "$note-bg": "#231E17 (earth.400) — 운동 중/카운트다운 배경"
   },
 
-  "status": {
+  "status-light": {
+    "$description": "라이트모드 status — OKLCH L 균일화 적용",
     "success-bg":      "{success.50}",
     "success-text":    "{success.700}",
     "success":         "{success.500}",
@@ -78,20 +79,22 @@
     "error-bg":        "{error.50}",
     "error-text":      "{error.700}",
     "error":           "{error.500}",
-    "error-bright":    "{error.600}",
-
-    "$note-success-bright": "#34C759 — 다크 모드 그린 아이콘/닷",
-    "$note-info-bright":    "#64B4F6 — 다크 모드 저점 뱃지"
+    "error-bright":    "{error.600}"
   },
 
   "status-dark": {
-    "$description": "다크 모드 뱃지/상태 배경은 투명도 기반",
-    "success-bg":  "rgba(52,199,89,0.15)",
-    "info-bg":     "rgba(100,180,246,0.15)",
-    "error-bg":    "rgba(239,83,80,0.15)",
-    "success-text": "{success.400}",
-    "info-text":    "{info.400}",
-    "error-text":   "{error.600}"
+    "$description": "다크모드 status — APCA 기반 명도대비 강화 (alpha 0.15→0.18)",
+    "success-bg":      "rgba(67,194,81,0.18)",
+    "success-text":    "{success.400}",
+    "success":         "{success.400}",
+    "success-bright":  "{success.400}",
+    "info-bg":         "rgba(96,170,243,0.18)",
+    "info-text":       "{info.400}",
+    "info-bright":     "{info.400}",
+    "error-bg":        "rgba(232,88,84,0.18)",
+    "error-text":      "{error.600}",
+    "error":           "{error.600}",
+    "error-bright":    "{error.600}"
   },
 
   "typography": {
