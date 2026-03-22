@@ -1,5 +1,5 @@
 export { Button } from "./Button"
 export { IconButton } from "./IconButton"
-export { Chip } from "./Chip"
+export { Chip, FilterPill, BodyPartPill } from "./Chip"
 export { Badge } from "./Badge"
 export { GlassBackground } from "./GlassBackground"
