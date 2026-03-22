@@ -55,16 +55,13 @@
     "$note-accent":  "#D4883A (sand.100) — 다크 오렌지 액센트"
   },
 
-  "workout": {
-    "$description": "운동 중/카운트다운 전용 다크 팔레트",
-    "bg":              "{earth.400}",
-    "surface":         "rgba(60,55,45,0.92)",
-    "fg":              "{white}",
-    "fg-secondary":    "rgba(255,255,255,0.45)",
-    "accent":          "{sand.300}",
-    "heart":           "{sand.300}",
-
-    "$note-bg": "#231E17 (earth.400) — 운동 중/카운트다운 배경"
+  "$workout-override": {
+    "$description": "운동 중 화면은 dark 테마 기반 + CSS 변수 override (global.css .workout-mode 참조)",
+    "bg":           "{earth.400}  → #231E17",
+    "surface":      "rgba(60,55,45,0.92)",
+    "fg-secondary": "rgba(255,255,255,0.45)",
+    "accent":       "{sand.300}  → #C4A87E",
+    "heart":        "{sand.300}  → #C4A87E"
   },
 
   "status-light": {

@@ -74,4 +74,12 @@
     --yb-status-error: #E85854;
     --yb-status-error-bright: #E85854;
   }
+
+  /* ── 운동 중 화면 override (dark 기반) ── */
+  .dark .workout-mode {
+    --yb-bg: #231E17;
+    --yb-surface: rgba(60,55,45,0.92);
+    --yb-fg-secondary: rgba(255,255,255,0.45);
+    --yb-accent: #C4A87E;
+  }
 }
