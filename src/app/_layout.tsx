@@ -1,5 +1,5 @@
 import "../global.css"
-import { Slot } from "expo-router"
+import { Stack } from "expo-router"
 import { useColorScheme, View } from "react-native"
 
 export default function RootLayout() {
@@ -7,7 +7,7 @@ export default function RootLayout() {
 
   return (
     <View className={`flex-1 ${colorScheme === "dark" ? "dark" : ""}`}>
-      <Slot />
+      <Stack screenOptions={{ headerShown: false }} />
     </View>
   )
 }
