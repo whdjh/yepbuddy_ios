@@ -1,4 +1,5 @@
 import { Pressable, Text, View, type ViewProps } from "react-native"
+import { GlassBackground } from "./GlassBackground"
 
 interface PillNavItem {
   label: string
@@ -9,20 +10,23 @@ interface PillNavProps extends Omit<ViewProps, "children"> {
   items: PillNavItem[]
   activeIndex: number
   onChangeIndex?: (index: number) => void
+  glass?: boolean
 }
 
 export function PillNav({
   items,
   activeIndex,
   onChangeIndex,
+  glass = false,
   className,
   ...rest
 }: PillNavProps) {
   return (
     <View
-      className={`flex-row items-center bg-yb-fill-strong rounded-full p-[6px]${className ? ` ${className}` : ""}`}
+      className={`flex-row items-center rounded-full p-[6px] overflow-hidden${glass ? "" : " bg-yb-fill-strong"}${className ? ` ${className}` : ""}`}
       {...rest}
     >
+      {glass && <GlassBackground />}
       {items.map((item, i) => {
         const isActive = i === activeIndex
         return (
