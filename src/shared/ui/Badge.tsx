@@ -30,7 +30,7 @@ export function Badge({ level, label }: BadgeProps) {
       className={`h-[28px] justify-center px-yb-3 rounded-full ${badgeStyles[level].container}`}
     >
       <Text
-        className={`text-yb-caption font-semibold ${badgeStyles[level].text}`}
+        className={`text-yb-caption font-bold ${badgeStyles[level].text}`}
       >
         {label}
       </Text>

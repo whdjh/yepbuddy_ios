@@ -20,7 +20,7 @@ const containerStyles: Record<ButtonVariant, string> = {
   ghost:
     "h-yb-btn-sm rounded-yb-md px-yb-6 items-center justify-center bg-transparent active:opacity-80",
   danger:
-    "h-yb-btn-md rounded-yb-lg bg-error-500 px-yb-6 items-center justify-center active:opacity-80",
+    "h-yb-btn-md rounded-yb-lg bg-yb-status-error px-yb-6 items-center justify-center active:opacity-80",
   glass:
     "h-yb-btn-md rounded-yb-lg px-yb-6 items-center justify-center overflow-hidden active:scale-[0.98]",
 }
