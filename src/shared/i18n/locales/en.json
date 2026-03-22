@@ -1,0 +1,105 @@
+{
+  "common": {
+    "back": "Back",
+    "start": "Start",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "more": "More",
+    "confirm": "OK",
+    "close": "Close"
+  },
+  "tabs": {
+    "journal": "Journal",
+    "tempo": "Tempo",
+    "protein": "Protein"
+  },
+  "workout": {
+    "record": {
+      "title": "Workout Log",
+      "bodyPart": "Body Part",
+      "sets": "Sets",
+      "setsUnit": "sets",
+      "memo": "Memo",
+      "memoPlaceholder": "Editable before, during, or after workout",
+      "startWorkout": "Start Workout"
+    },
+    "active": {
+      "title": "Working Out",
+      "countdown": "Countdown",
+      "pause": "Pause",
+      "resume": "Resume",
+      "endWorkout": "End Workout",
+      "discardWorkout": "Discard & Exit"
+    },
+    "result": {
+      "duration": "Duration",
+      "calories": "Active Calories",
+      "totalSets": "Sets",
+      "avgHeartRate": "Avg Heart Rate",
+      "heartRateChart": "Heart Rate Chart",
+      "location": "Workout Location"
+    },
+    "bodyParts": {
+      "chest": "Chest",
+      "back": "Back",
+      "legs": "Legs",
+      "shoulders": "Shoulders",
+      "arms": "Arms",
+      "core": "Core"
+    }
+  },
+  "summary": {
+    "title": "Summary",
+    "todayWorkout": "Today's Workout",
+    "workoutTime": "Workout Time",
+    "thisWeekSessions": "This Week",
+    "editSummary": "Edit Summary",
+    "allCategories": "All Categories"
+  },
+  "sessions": {
+    "title": "Sessions",
+    "filterAll": "All"
+  },
+  "calendar": {
+    "title": "Calendar"
+  },
+  "tempo": {
+    "title": "Tempo",
+    "subtitle": "Focus on contraction & relaxation timing",
+    "contractionFirst": "Contraction First",
+    "relaxationFirst": "Relaxation First",
+    "contraction": "Contraction",
+    "relaxation": "Relaxation",
+    "reps": "Reps",
+    "repsUnit": "reps",
+    "rest": "Rest",
+    "secondUnit": "s",
+    "waiting": "Waiting",
+    "currentSet": "Current Set",
+    "currentRep": "Current Rep",
+    "section": "Section"
+  },
+  "protein": {
+    "title": "Protein",
+    "subtitle": "Price analysis · Find the best price per gram",
+    "filterAll": "All",
+    "category": "Category",
+    "volume": "Volume",
+    "price": "Price",
+    "pricePerGram": "Price/g",
+    "detail": {
+      "title": "Details",
+      "features": "Features",
+      "currentPrice": "Current Price",
+      "priceTrend": "Price Trend",
+      "buyNow": "Buy Now"
+    },
+    "levels": {
+      "low": "Low",
+      "mid": "Mid",
+      "high": "High"
+    }
+  }
+}

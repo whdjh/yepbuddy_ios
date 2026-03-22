@@ -1,4 +1,5 @@
 import "../global.css"
+import "@/shared/i18n/i18n"
 import { Stack } from "expo-router"
 import { useColorScheme, View } from "react-native"
 
