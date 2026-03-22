@@ -4,6 +4,8 @@ interface StepperProps extends Omit<ViewProps, "children"> {
   label: string
   value: number
   unit: string
+  min?: number
+  max?: number
   onDecrement?: () => void
   onIncrement?: () => void
   jumpStep?: number
@@ -15,6 +17,8 @@ export function Stepper({
   label,
   value,
   unit,
+  min,
+  max,
   onDecrement,
   onIncrement,
   jumpStep,
@@ -24,6 +28,8 @@ export function Stepper({
   ...rest
 }: StepperProps) {
   const hasJump = jumpStep != null
+  const atMin = min != null && value <= min
+  const atMax = max != null && value >= max
 
   return (
     <View
@@ -32,15 +38,17 @@ export function Stepper({
     >
       {hasJump && (
         <Pressable
-          className="w-[44px] h-[44px] rounded-yb-icon bg-yb-surface-muted items-center justify-center"
+          className={`w-[44px] h-[44px] rounded-yb-icon bg-yb-surface-muted items-center justify-center${atMin ? " opacity-30" : ""}`}
           onPress={onJumpDown}
+          disabled={atMin}
         >
           <Text className="text-[13px] font-bold text-yb-fg-secondary">−{jumpStep}</Text>
         </Pressable>
       )}
       <Pressable
-        className="w-[44px] h-[44px] rounded-yb-icon bg-yb-surface-muted items-center justify-center"
+        className={`w-[44px] h-[44px] rounded-yb-icon bg-yb-surface-muted items-center justify-center${atMin ? " opacity-30" : ""}`}
         onPress={onDecrement}
+        disabled={atMin}
       >
         <Text className="text-[20px] font-semibold text-yb-fg">−</Text>
       </Pressable>
@@ -52,15 +60,17 @@ export function Stepper({
         </Text>
       </View>
       <Pressable
-        className="w-[44px] h-[44px] rounded-yb-icon bg-yb-surface-muted items-center justify-center"
+        className={`w-[44px] h-[44px] rounded-yb-icon bg-yb-surface-muted items-center justify-center${atMax ? " opacity-30" : ""}`}
         onPress={onIncrement}
+        disabled={atMax}
       >
         <Text className="text-[20px] font-semibold text-yb-fg">+</Text>
       </Pressable>
       {hasJump && (
         <Pressable
-          className="w-[44px] h-[44px] rounded-yb-icon bg-yb-surface-muted items-center justify-center"
+          className={`w-[44px] h-[44px] rounded-yb-icon bg-yb-surface-muted items-center justify-center${atMax ? " opacity-30" : ""}`}
           onPress={onJumpUp}
+          disabled={atMax}
         >
           <Text className="text-[13px] font-bold text-yb-fg-secondary">+{jumpStep}</Text>
         </Pressable>
