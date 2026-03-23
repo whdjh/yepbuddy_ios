@@ -7,6 +7,7 @@ import { Button } from "@/shared/ui/Button"
 import { Stepper } from "@/shared/ui/Stepper"
 import { BodyPartPill } from "@/shared/ui/Chip"
 import { Host, ScrollView as SwiftScrollView, HStack } from "@expo/ui/swift-ui"
+import { padding } from "@expo/ui/swift-ui/modifiers"
 
 const BODY_PART_KEYS = ["chest", "back", "legs", "shoulders", "arms", "core"] as const
 
@@ -43,7 +44,7 @@ export function RecordWorkoutForm() {
         <Text className="text-yb-fg font-bold text-yb-body-lg mb-yb-3">{t("workout.record.bodyPart")}</Text>
         <Host style={{ height: 44 }}>
           <SwiftScrollView axes="horizontal" showsIndicators={false}>
-            <HStack spacing={10}>
+            <HStack spacing={10} modifiers={[padding({ leading: 4 })]}>
               {BODY_PART_KEYS.map((key) => (
                 <BodyPartPill
                   key={key}
