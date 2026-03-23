@@ -1,51 +1,33 @@
-import { Pressable, Text, View, type ViewProps } from "react-native"
-import { GlassBackground } from "./GlassBackground"
+import { NativeTabs } from "expo-router/unstable-native-tabs"
+import type { ComponentProps } from "react"
 
-interface PillNavItem {
-  label: string
-  icon: React.ReactNode
+type NativeTabsProps = ComponentProps<typeof NativeTabs>
+type TriggerProps = ComponentProps<typeof NativeTabs.Trigger>
+type IconProps = ComponentProps<typeof NativeTabs.Trigger.Icon>
+type LabelProps = ComponentProps<typeof NativeTabs.Trigger.Label>
+
+type PillNavProps = NativeTabsProps
+type PillNavItemProps = TriggerProps
+type PillNavIconProps = IconProps
+type PillNavLabelProps = LabelProps
+
+function PillNavItem(props: PillNavItemProps) {
+  return <NativeTabs.Trigger {...props} />
 }
 
-interface PillNavProps extends Omit<ViewProps, "children"> {
-  items: PillNavItem[]
-  activeIndex: number
-  onChangeIndex?: (index: number) => void
-  glass?: boolean
+function PillNavIcon(props: PillNavIconProps) {
+  return <NativeTabs.Trigger.Icon {...props} />
 }
 
-export function PillNav({
-  items,
-  activeIndex,
-  onChangeIndex,
-  glass = false,
-  className,
-  ...rest
-}: PillNavProps) {
-  return (
-    <View
-      className={`flex-row items-center rounded-full p-[6px] overflow-hidden${glass ? "" : " bg-yb-fill-strong"}${className ? ` ${className}` : ""}`}
-      {...rest}
-    >
-      {glass && <GlassBackground />}
-      {items.map((item, i) => {
-        const isActive = i === activeIndex
-        return (
-          <Pressable
-            key={i}
-            className={`flex-1 items-center gap-[3px] rounded-[16px] py-[10px] min-h-[52px] justify-center${isActive ? " bg-yb-accent" : ""}`}
-            onPress={() => onChangeIndex?.(i)}
-          >
-            <View className="w-[20px] h-[20px] items-center justify-center opacity-70" style={isActive ? { opacity: 1 } : undefined}>
-              {item.icon}
-            </View>
-            <Text
-              className={`text-[11px] font-semibold${isActive ? " text-yb-on-accent opacity-100" : " text-yb-on-strong opacity-70"}`}
-            >
-              {item.label}
-            </Text>
-          </Pressable>
-        )
-      })}
-    </View>
-  )
+function PillNavLabel(props: PillNavLabelProps) {
+  return <NativeTabs.Trigger.Label {...props} />
 }
+
+PillNavItem.Icon = PillNavIcon
+PillNavItem.Label = PillNavLabel
+
+export function PillNav(props: PillNavProps) {
+  return <NativeTabs {...props} />
+}
+
+PillNav.Item = PillNavItem
