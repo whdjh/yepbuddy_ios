@@ -1,4 +1,7 @@
 import { TextInput, type TextInputProps } from "react-native"
+import { Host } from "@expo/ui/swift-ui"
+import { TextField as SwiftTextField } from "@expo/ui/swift-ui"
+import { frame, padding, glassEffect } from "@expo/ui/swift-ui/modifiers"
 
 /* Input */
 
@@ -27,5 +30,33 @@ export function Textarea({ className, ...rest }: TextareaProps) {
       textAlignVertical="top"
       {...rest}
     />
+  )
+}
+
+/* GlassTextarea */
+
+interface GlassTextareaProps {
+  placeholder?: string
+  defaultValue?: string
+  onChangeText?: (value: string) => void
+  minHeight?: number
+}
+
+export function GlassTextarea({ placeholder, defaultValue, onChangeText, minHeight = 140 }: GlassTextareaProps) {
+  return (
+    <Host style={{ minHeight: minHeight + 20 }}>
+      <SwiftTextField
+        placeholder={placeholder}
+        defaultValue={defaultValue}
+        onChangeText={onChangeText}
+        multiline
+        numberOfLines={6}
+        modifiers={[
+          frame({ minHeight }),
+          padding({ all: 12 }),
+          glassEffect({ glass: { variant: "regular" }, shape: "roundedRectangle", cornerRadius: 16 }),
+        ]}
+      />
+    </Host>
   )
 }
