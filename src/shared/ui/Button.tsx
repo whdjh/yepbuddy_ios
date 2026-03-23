@@ -45,7 +45,7 @@ export function Button({ variant = "primary", label, className, disabled, onPres
         <HStack
           modifiers={[
             frame({ maxWidth: Infinity, height: 52 }),
-            glassEffect({ glass: { variant: "regular", interactive: true, tint: "#9B7E56" }, shape: "roundedRectangle", cornerRadius: 14 }),
+            glassEffect({ glass: { variant: "regular", interactive: true }, shape: "roundedRectangle", cornerRadius: 14 }),
           ]}
         >
           <SwiftButton
