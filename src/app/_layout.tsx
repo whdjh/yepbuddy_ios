@@ -22,7 +22,6 @@ export default function RootLayout() {
             headerBackTitle: "홈",
             title: "운동 기록",
             headerTransparent: true,
-            headerBlurEffect: isDark ? "systemMaterialDark" : "systemMaterial",
             headerTintColor: isDark ? "#FFFFFF" : "#3A2A1A",
             headerTitleStyle: { fontWeight: "700" },
           }}
