@@ -1,5 +1,7 @@
 import { Pressable, Text, type PressableProps } from "react-native"
 import { GlassBackground } from "./GlassBackground"
+import { Button as SwiftButton } from "@expo/ui/swift-ui"
+import { buttonStyle, controlSize, tint } from "@expo/ui/swift-ui/modifiers"
 
 type ChipVariant = "default" | "active" | "glass"
 type FilterPillVariant = "default" | "active"
@@ -15,9 +17,10 @@ interface FilterPillProps extends Omit<PressableProps, "children"> {
   label: string
 }
 
-interface BodyPartPillProps extends Omit<PressableProps, "children"> {
+interface BodyPartPillProps {
   variant?: BodyPartPillVariant
   label: string
+  onPress?: () => void
 }
 
 /* Chip */
@@ -70,22 +73,16 @@ export function FilterPill({ variant = "default", label, ...rest }: FilterPillPr
 
 /* BodyPartPill */
 
-const bodyPartPillContainer: Record<BodyPartPillVariant, string> = {
-  default:
-    "h-[40px] rounded-yb-chip border-[1.5px] border-yb-border bg-transparent px-yb-5 items-center justify-center",
-  active:
-    "h-[40px] rounded-yb-chip border-[1.5px] border-yb-fill-strong bg-yb-fill-strong px-yb-5 items-center justify-center",
-}
-
-const bodyPartPillLabel: Record<BodyPartPillVariant, string> = {
-  default: "text-yb-fg text-yb-body-sm font-semibold",
-  active:  "text-yb-on-strong text-yb-body-sm font-semibold",
-}
-
-export function BodyPartPill({ variant = "default", label, ...rest }: BodyPartPillProps) {
+export function BodyPartPill({ variant = "default", label, onPress }: BodyPartPillProps) {
   return (
-    <Pressable className={bodyPartPillContainer[variant]} {...rest}>
-      <Text className={bodyPartPillLabel[variant]}>{label}</Text>
-    </Pressable>
+    <SwiftButton
+      label={label}
+      onPress={onPress}
+      modifiers={[
+        buttonStyle("glass"),
+        controlSize("regular"),
+        tint(variant === "active" ? "#9B7E56" : "#888888"),
+      ]}
+    />
   )
 }

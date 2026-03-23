@@ -52,7 +52,7 @@ export function GlassTextarea({ placeholder, defaultValue, onChangeText, minHeig
         multiline
         numberOfLines={6}
         modifiers={[
-          frame({ minHeight }),
+          frame({ minHeight, alignment: "topLeading" }),
           padding({ all: 12 }),
           glassEffect({ glass: { variant: "regular" }, shape: "roundedRectangle", cornerRadius: 16 }),
         ]}

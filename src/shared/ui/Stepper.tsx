@@ -1,6 +1,18 @@
 import { Pressable, Text, View, type ViewProps } from "react-native"
+import { Host, HStack, VStack, Button as SwiftButton, Text as SwiftText } from "@expo/ui/swift-ui"
+import {
+  buttonStyle,
+  disabled as disabledMod,
+  glassEffect,
+  padding,
+  frame,
+  foregroundStyle,
+} from "@expo/ui/swift-ui/modifiers"
+
+type StepperVariant = "default" | "glass"
 
 interface StepperProps extends Omit<ViewProps, "children"> {
+  variant?: StepperVariant
   label: string
   value: number
   unit: string
@@ -14,6 +26,7 @@ interface StepperProps extends Omit<ViewProps, "children"> {
 }
 
 export function Stepper({
+  variant = "default",
   label,
   value,
   unit,
@@ -30,6 +43,42 @@ export function Stepper({
   const hasJump = jumpStep != null
   const atMin = min != null && value <= min
   const atMax = max != null && value >= max
+
+  if (variant === "glass") {
+    return (
+      <Host style={{ height: 64 }}>
+        <HStack modifiers={[
+          padding({ horizontal: 16, vertical: 12 }),
+          glassEffect({ glass: { variant: "regular" }, shape: "roundedRectangle", cornerRadius: 16 }),
+        ]}>
+          <SwiftButton
+            label="−"
+            onPress={onDecrement}
+            modifiers={[
+              buttonStyle("glass"),
+              disabledMod(atMin),
+            ]}
+          />
+          <VStack modifiers={[frame({ maxWidth: 9999 })]}>
+            <SwiftText modifiers={[foregroundStyle("#A8A29E")]}>
+              {label}
+            </SwiftText>
+            <SwiftText modifiers={[foregroundStyle("#FFFFFF")]}>
+              {`${value}${unit}`}
+            </SwiftText>
+          </VStack>
+          <SwiftButton
+            label="+"
+            onPress={onIncrement}
+            modifiers={[
+              buttonStyle("glass"),
+              disabledMod(atMax),
+            ]}
+          />
+        </HStack>
+      </Host>
+    )
+  }
 
   return (
     <View
